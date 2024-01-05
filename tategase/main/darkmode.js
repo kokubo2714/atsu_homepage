@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var checkbox = document.getElementById("test");
+    var checkbox = document.getElementById("mode");
 
     checkbox.addEventListener('change', function() {
         if(this.checked) {
