@@ -163,6 +163,8 @@ footer {
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
     /* アニメーション効果 */
+    overflow-y: auto;
+    /* コンテンツが高さを超えた場合に縦スクロールを可能にする */
 }
 
 /* ネストされたリストのスタイル */
@@ -179,6 +181,13 @@ ul .toggle-button {
     /* サブ項目のインデント */
     font-size: 0.9em;
     /* サブ項目のフォントサイズを少し小さく */
+}
+
+.mouse-image {
+    max-width: 100%;
+    /* コンテナの幅に合わせて画像サイズを調整 */
+    height: auto;
+    /* 画像の縦横比を維持 */
 }
 
 /* メディアクエリを使用して異なる画面サイズでのスタイルを設定 */
