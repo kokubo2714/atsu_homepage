@@ -131,10 +131,10 @@ header {
         &:before {
             position: absolute;
             content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
+            height: 26px; // サイズを調整
+            width: 26px;  // サイズを調整
+            left: 4px;    // 位置を調整
+            bottom: 4px;  // 位置を調整
             background-color: white;
             transition: .4s;
         }
@@ -149,7 +149,7 @@ header {
     }
 
     input:checked + .slider:before {
-        transform: translateX(26px);
+        transform: translateX(26px); // 位置を調整
     }
 
     .slider.round {

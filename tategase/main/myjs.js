@@ -18,8 +18,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             localStorage.setItem('theme', 'light');
         }
     }
-
-    toggleSwitch.addEventListener('change', swichTheme, false)
 });
 
 //メディアクエリのダークモード検出
