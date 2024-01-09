@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let cha_next = document.getElementById("cha_next");
     let cha_prev = document.getElementById("cha_prev");
 
-    let m_img = ["../image/mouse_2.jpg", "../image/mouse_1.jpg"];
-    let c_img = ["../image/cha_2.jpg",  "../image/cha_1.jpg"];
+    let m_img = ["../image/mouse_1.jpg", "../image/mouse_2.jpg"];
+    let c_img = ["../image/cha_1.jpg",  "../image/cha_2.jpg"];
 
     function change_image(element, img_src, c) {
 	    c = ((c % img_src.length) + img_src.length) % img_src.length;
