@@ -49,28 +49,28 @@ document.addEventListener('DOMContentLoaded', () => {
 	    return c;
     }
 
-    logo_next.addEventListener("click", (e) => {
-	let count = parseInt(e.target.getAttribute("data-count")) || 0;
+    logo_next.addEventListener("click", () => {
+	let count = parseInt(logo.getAttribute("data-count")) || 0;
 	count = change_image(logo, m_img, count + 1);
-	e.target.setAttribute("data-count", count);
+	logo.setAttribute("data-count", count);
     });
 
-    logo_prev.addEventListener("click", (e) => {
-	let count = parseInt(e.target.getAttribute("data-count")) || 0;
+    logo_prev.addEventListener("click", () => {
+	let count = parseInt(logo.getAttribute("data-count")) || 0;
 	count = change_image(logo, m_img, count - 1);
-	e.target.setAttribute("data-count", count);
+	logo.setAttribute("data-count", count);
     });
 
-    cha_next.addEventListener("click", (e) => {
-	let count = parseInt(e.target.getAttribute("data-count")) || 0;
+    cha_next.addEventListener("click", () => {
+	let count = parseInt(cha.getAttribute("data-count")) || 0;
 	count = change_image(cha, c_img, count + 1);
-	e.target.setAttribute("data-count", count);
+	cha.setAttribute("data-count", count);
     });
 
-    cha_prev.addEventListener("click", (e) => {
-	let count = parseInt(e.target.getAttribute("data-count")) || 0;
+    cha_prev.addEventListener("click", () => {
+	let count = parseInt(cha.getAttribute("data-count")) || 0;
 	count = change_image(cha, c_img, count - 1);
-	e.target.setAttribute("data-count", count);
+	cha.setAttribute("data-count", count);
     });
 });
 
