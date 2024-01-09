@@ -31,8 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    let logo = document.getElementById("logo");
+    let cha = document.getElementById("cha");
+
+    let m_img = ["../image/mouse_2.jpg", "../image/mouse_1.jpg"];
+    let c_img = ["../image/cha_2.jpg",  "../image/cha_1.jpg"];
+
+    logo.addEventListener("click", (e) => {
+	let count = e.target.getAttribute("data-count") || 0;
+	count += 1;
+	e.target.src = m_img[count];
+	e.target.setAttribute("data-count", count);
+    });
+
+    cha.addEventListener("click", (e) => {
+	let count = e.target.getAttribute("data-count") || 0;
+	count += 1;
+	e.target.src = m_img[count];
+	e.target.setAttribute("data-count", count);
+    });
 });
 
+/*
 function imagechange1() {
     document.getElementById('logo').src = "../image/mouse_2.jpg";
 }
@@ -45,3 +65,4 @@ function imagechange3() {
 function imagechange4() {
     document.getElementById('cha').src = "../image/cha_1.jpg";
 }
+*/
