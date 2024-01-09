@@ -21,7 +21,7 @@ html.transition *,
 html.transition *:before,
 html.transition *:after {
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms !important;
-  transition-delay: 0 !important;
+  transition-delay: 0s !important;
 }
 
 input[type=checkbox] {
