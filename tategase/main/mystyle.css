@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #f5f5f5;
 }
@@ -27,7 +28,6 @@ header {
   flex-direction: column;
   align-items: flex-start;
 }
-
 .header-inner {
   width: 100%;
   display: flex;
@@ -35,15 +35,21 @@ header {
   align-items: center;
   margin-bottom: 10px;
 }
-
 .header-controls, .header-icon {
   width: 50px;
   margin-right: 10px;
 }
-
 .header-title {
   font-size: 24px;
   font-weight: bold;
+}
+
+/* フッタースタイル */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: left;
+  padding: 1em 0;
 }
 
 .nav {
@@ -52,7 +58,6 @@ header {
   padding: 0;
   display: flex;
 }
-
 .nav li {
   padding: 10px 30px;
   display: inline-block;
@@ -60,11 +65,9 @@ header {
   transition: background-color 0.2s;
   border: 1px solid black;
 }
-
 .nav li:hover {
   background-color: grey;
 }
-
 .nav li a {
   text-decoration: none;
   color: black;
@@ -75,15 +78,12 @@ header {
   background-color: #333;
   color: white;
 }
-
 [data-theme=dark] .nav li {
   border-color: #555;
 }
-
 [data-theme=dark] .nav li a {
   color: black;
 }
-
 [data-theme=dark] .nav li:hover {
   background-color: #555;
 }
@@ -105,13 +105,11 @@ header {
   width: 60px;
   height: 34px;
 }
-
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .switch .slider {
   position: absolute;
   cursor: pointer;
@@ -122,7 +120,6 @@ header {
   background-color: #CCC;
   transition: 0.4s;
 }
-
 .switch .slider:before {
   position: absolute;
   content: "";
@@ -133,24 +130,18 @@ header {
   background-color: white;
   transition: 0.4s;
 }
-
 .switch input:checked + .slider {
   background-color: #2196F3;
 }
-
 .switch input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
 }
-
 .switch input:checked + .slider:before {
   transform: translateX(26px);
 }
-
 .switch .slider.round {
   border-radius: 34px;
 }
-
 .switch .slider.round:before {
   border-radius: 50%;
-}
-/*# sourceMappingURL=mystyle.css.map */
+}/*# sourceMappingURL=mystyle.css.map */

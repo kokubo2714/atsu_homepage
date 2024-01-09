@@ -48,6 +48,14 @@ header {
     }
 }
 
+/* フッタースタイル */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 1em 0;
+}
+
 // ナビゲーション関連のスタイル
 .nav {
     list-style: none;
@@ -84,7 +92,7 @@ header {
             border-color: #555;
 
             a {
-                color: white;
+                color: black;
             }
 
             &:hover {

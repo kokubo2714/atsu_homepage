@@ -32,3 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function imagechange1() {
+    document.getElementById('logo').src = "/tategase/image/mouse_2.jpg";
+}
+function imagechange2() {
+    document.getElementById('logo').src = "/tategase/image/mouse_1.jpg";
+}
+function imagechange3() {
+    document.getElementById('cha').src = "/tategase/image/cha_2.jpg";
+}
+function imagechange4() {
+    document.getElementById('cha').src = "/tategase/image/cha_1.jpg";
+}
