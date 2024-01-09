@@ -46,25 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     logo_next.addEventListener("click", (e) => {
-	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	let count = parseInt(e.target.getAttribute("data-count")) || 0;
 	count = change_image(e.target, m_img, count + 1);
 	e.target.setAttribute("data-count", count);
     });
 
     logo_prev.addEventListener("click", (e) => {
-	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	let count = parseInt(e.target.getAttribute("data-count")) || 0;
 	count = change_image(e.target, m_img, count - 1);
 	e.target.setAttribute("data-count", count);
     });
 
     cha_next.addEventListener("click", (e) => {
-	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	let count = parseInt(e.target.getAttribute("data-count")) || 0;
 	count = change_image(e.target, c_img, count + 1);
 	e.target.setAttribute("data-count", count);
     });
 
     cha_prev.addEventListener("click", (e) => {
-	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	let count = parseInt(e.target.getAttribute("data-count")) || 0;
 	count = change_image(e.target, c_img, count - 1);
 	e.target.setAttribute("data-count", count);
     });
