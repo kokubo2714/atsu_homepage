@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content.style.maxHeight = isClosed ? null : `${content.scrollHeight}px`;
 
             // ボタンのテキストを切り替える
-            button.textContent = isClosed ? `▼ ${button.getAttribute('data-toggle-text')} を開く`: `▼ ${button.getAttribute('data-toggle-text')} を閉じる`;
+            button.textContent = isClosed ? `▶ ${button.getAttribute('data-toggle-text')} を表示する`: `▼ ${button.getAttribute('data-toggle-text')} を閉じる`;
         });
     });
 

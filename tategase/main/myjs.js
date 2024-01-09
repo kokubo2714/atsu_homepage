@@ -34,3 +34,9 @@ window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
     }
 });
 
+function imagechange1() {
+    document.getElementById('ui').src = "../image/roomart_2.jpg";
+}
+function imagechange2() {
+    document.getElementById('ui').src = "../image/roomart_1.jpg";
+}
