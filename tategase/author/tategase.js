@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function change_image(element, img_src, c) {
 	    let count = parseInt(element.getAttribute("data-count")) || 0;
 	    count = ((count + c % img_src.length) + img_src.length) % img_src.length;
-	    element.src = img_src[c];
+	    element.src = img_src[count];
 	    element.setAttribute("data-count", count);
     }
 
