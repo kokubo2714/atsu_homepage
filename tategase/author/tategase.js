@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let m_img = ["../image/mouse_2.jpg", "../image/mouse_1.jpg"];
     let c_img = ["../image/cha_2.jpg",  "../image/cha_1.jpg"];
 
-    function change_image(element, image_src, c) {
-	    c %= image_src.length;
+    function change_image(element, img_src, c) {
+	    c = ((c % img_src.length) + img_src.length) % img_src.length;
 	    element.src = image_src[c];
 	    return c;
     }
