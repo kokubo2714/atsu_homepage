@@ -31,23 +31,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    let logo = document.getElementById("logo");
-    let cha = document.getElementById("cha");
+    let logo_next = document.getElementById("logo_next");
+    let logo_prev = document.getElementById("logo_prev");
+    let cha_next = document.getElementById("cha_next");
+    let cha_prev = document.getElementById("cha_prev");
 
     let m_img = ["../image/mouse_2.jpg", "../image/mouse_1.jpg"];
     let c_img = ["../image/cha_2.jpg",  "../image/cha_1.jpg"];
 
-    logo.addEventListener("click", (e) => {
-	let count = e.target.getAttribute("data-count") || 0;
-	count += 1;
-	e.target.src = m_img[count];
+    function change_image(element, image_src, c) {
+	    c %= image_src.length;
+	    element.src = image_src[c];
+	    return c;
+    }
+
+    logo_next.addEventListener("click", (e) => {
+	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	count = change_image(e.target, m_img, count + 1);
 	e.target.setAttribute("data-count", count);
     });
 
-    cha.addEventListener("click", (e) => {
-	let count = e.target.getAttribute("data-count") || 0;
-	count += 1;
-	e.target.src = m_img[count];
+    logo_prev.addEventListener("click", (e) => {
+	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	count = change_image(e.target, m_img, count - 1);
+	e.target.setAttribute("data-count", count);
+    });
+
+    cha_next.addEventListener("click", (e) => {
+	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	count = change_image(e.target, c_img, count + 1);
+	e.target.setAttribute("data-count", count);
+    });
+
+    cha_prev.addEventListener("click", (e) => {
+	let count = Integer.parseInt(e.target.getAttribute("data-count")) || 0;
+	count = change_image(e.target, c_img, count - 1);
 	e.target.setAttribute("data-count", count);
     });
 });
