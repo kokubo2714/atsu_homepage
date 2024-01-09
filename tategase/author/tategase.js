@@ -44,33 +44,26 @@ document.addEventListener('DOMContentLoaded', () => {
     let c_img = ["../image/cha_1.jpg",  "../image/cha_2.jpg"];
 
     function change_image(element, img_src, c) {
-	    c = ((c % img_src.length) + img_src.length) % img_src.length;
+	    let count = parseInt(element.getAttribute("data-count")) || 0;
+	    count = ((count + c % img_src.length) + img_src.length) % img_src.length;
 	    element.src = img_src[c];
-	    return c;
+	    element.setAttribute("data-count", count);
     }
 
     logo_next.addEventListener("click", () => {
-	let count = parseInt(logo.getAttribute("data-count")) || 0;
-	count = change_image(logo, m_img, count + 1);
-	logo.setAttribute("data-count", count);
+	change_image(logo, m_img, 1);
     });
 
     logo_prev.addEventListener("click", () => {
-	let count = parseInt(logo.getAttribute("data-count")) || 0;
-	count = change_image(logo, m_img, count - 1);
-	logo.setAttribute("data-count", count);
+	change_image(logo, m_img, -1);
     });
 
     cha_next.addEventListener("click", () => {
-	let count = parseInt(cha.getAttribute("data-count")) || 0;
-	count = change_image(cha, c_img, count + 1);
-	cha.setAttribute("data-count", count);
+	change_image(cha, c_img, 1);
     });
 
     cha_prev.addEventListener("click", () => {
-	let count = parseInt(cha.getAttribute("data-count")) || 0;
-	count = change_image(cha, c_img, count - 1);
-	cha.setAttribute("data-count", count);
+	change_image(cha, c_img, -1);
     });
 });
 
