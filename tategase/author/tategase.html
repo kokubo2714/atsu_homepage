@@ -23,7 +23,8 @@
                     <h2 class="profile-name">立ヶ瀬／たてがせ</h2>
                     <p class="profile-description">おはこんばんちは。立ヶ瀬と申します。 </p>
                     <p class="profile-description">この「立ヶ瀬の部屋」では、自分の紹介や作品、更新情報などを投稿していきます！</p>
-                    <p class="profile-description">なお、このWebサイトのコードは、授業で学んだことや、先輩などにアドバイスをいただいて作成しました。また、参考程度にChatGPTを使用しています。</p>
+                    <p class="profile-description">
+                        なお、このWebサイトのコードは、授業で学んだことや、先輩などにアドバイスをいただいて作成しました。また、参考程度にChatGPTを使用しています。</p>
                     <div class="profile-description">
                         <button class="toggle-button" data-toggle-text="作業環境">▶ 作業環境 を開く</button>
                         <div class="toggle-content">
@@ -44,11 +45,13 @@
                                 </li>
                                 <li>
                                     <h3>・マウス</h3>
-                                    <p><a href="https://g.co/kgs/DZXW3pB" target="_blank" rel="noopener noreferrer">Logicool Silent Bluetooth Mouse M240GR</a></p>
+                                    <p><a href="https://g.co/kgs/DZXW3pB" target="_blank"
+                                            rel="noopener noreferrer">Logicool Silent Bluetooth Mouse M240GR</a></p>
                                     <p>クリック音がならない<b>静音設計</b>！ しかも安い！ (2000円程度で買えます) </p>
                                     <button class="toggle-button" data-toggle-text="画像">▶ 画像 を表示する</button>
                                     <div class="toggle-content">
-                                        <img src="../image/mouse_1.jpg" id="logo" alt="マウス画像" class="mouse-image" width="500" >
+                                        <img src="../image/mouse_1.jpg" id="logo" alt="マウス画像" class="mouse-image"
+                                            width="500">
                                         <input type="button" value="次に進む" id="logo_next">
                                         <input type="button" value="元に戻す" id="logo_prev">
                                     </div>
@@ -56,11 +59,13 @@
                                 </li>
                                 <li>
                                     <h3>・机の上にあるもの</h3>
-                                    <p><a href="https://www.coca-cola.com/jp/ja/brands/yakan" target="_blank" rel="noopener noreferrer">やかんの麦茶</a></p>
+                                    <p><a href="https://www.coca-cola.com/jp/ja/brands/yakan" target="_blank"
+                                            rel="noopener noreferrer">やかんの麦茶</a></p>
                                     <p>作者のおすすめ麦茶ベスト３には入るほどおすすめです。味のクセが無いし、飲みやすくて、いつも箱買いしてます笑</p>
                                     <button class="toggle-button" data-toggle-text="画像">▶ 画像 を表示する</button>
                                     <div class="toggle-content">
-                                        <img src="../image/cha_1.jpg" id="cha" alt="お茶の画像" class="cha-image" width="200" >
+                                        <img src="../image/cha_1.jpg" id="cha" alt="お茶の画像" class="cha-image"
+                                            width="200">
                                         <input type="button" value="次に進む" id="cha_next">
                                         <input type="button" value="元に戻す" id="cha_prev">
                                     </div>
@@ -82,10 +87,25 @@
     </main>
     <footer>
         <div class="social-links">
-            <a href="https://twitter.com/tategase" target="_blank" rel="noopener noreferrer" class="social-icon twitter-icon">Twitter</a>
+            <a href="https://twitter.com/tategase" target="_blank" rel="noopener noreferrer"
+                class="social-icon twitter-icon">Twitter</a>
             <!-- <a href=# class="social-icon line-icon">LINE</a> -->
             <!-- 他のSNSアイコンも同様に追加 -->
         </div>
     </footer>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "46468e1c-e316-492f-8f4f-5a0dcd6c1c61", // The ID of this integration.
+            region: "jp-tok", // The region your integration is hosted in.
+            serviceInstanceID: "cc303026-e321-4de1-aca4-a60680f96fb3", // The ID of your service instance.
+            onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
 </body>
+
 </html>
