@@ -1,0 +1,314 @@
+/* styles/style.css */
+
+/* ------------------------------
+    リセット/共通設定
+------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 好みでGoogle Fontsの読み込みをヘッダーに追加して使用 */
+body {
+    font-family: "Zen Maru Gothic", sans-serif;
+    /* 例: かわいい丸ゴシック */
+    line-height: 1.5;
+    overflow-x: hidden;
+    /* サイドバー開閉で横スクロールが出ないように */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------------
+    テーマ別の変数設定
+    例: body.theme-white などで --border-color を設定
+  ------------------------------ */
+body.theme-white {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #f2f2f2;
+    --sidebar-bg: #fafafa;
+    --footer-bg: #eeeeee;
+    --accent-color: #d3d3d3;
+    --border-color: #000000; /* 枠線は黒 */
+    /* フッターの灰色バーなど */
+}
+
+body.theme-black {
+    --bg-color: #222222;
+    --text-color: #f0f0f0;
+    --header-bg: #333333;
+    --sidebar-bg: #2a2a2a;
+    --footer-bg: #444444;
+    --accent-color: #555555;
+    --border-color: #ffffff; /* 枠線は白 */
+}
+
+body.theme-kinari {
+    /* 生成りっぽい色合い */
+    --bg-color: #f9f6eb;
+    --text-color: #333333;
+    --header-bg: #ebe6d8;
+    --sidebar-bg: #faf9f4;
+    --footer-bg: #e0dbc6;
+    --accent-color: #d3d0bc;
+    --border-color: #000000; /* 枠線は黒(生成り背景なら黒が映える) */
+}
+
+/* ------------------------------
+    ベースカラー適用
+  ------------------------------ */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ------------------------------
+    ヘッダー
+  ------------------------------ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--header-bg);
+    padding: 0 1rem;
+    height: 60px;
+}
+
+.header_left {
+    display: flex;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+    /* タイトルをもっと可愛くするにはフォントや色などを調整 */
+}
+
+.header_nav a {
+    margin: 0 0.5rem;
+    color: var(--text-color);
+}
+
+/* ------------------------------
+    ハンバーガーメニュー
+  ------------------------------ */
+.hamburger {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: var(--text-color);
+    transition: 0.4s;
+    border-radius: 2px;
+}
+
+/* サイドバーが開いたら、ハンバーガーは×マークに変形したい… */
+.hamburger.active span:nth-of-type(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-of-type(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ------------------------------
+    サイドバー (オーバーレイ)
+  ------------------------------ */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    /* ヘッダーの下 */
+    left: -250px;
+    /* 初期は画面外に隠す */
+    width: 250px;
+    height: calc(100% - 60px);
+    background: var(--sidebar-bg);
+    transition: 0.4s;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    left: 0;
+    /* 画面内にスライド */
+}
+
+.sidebar_inner {
+    padding: 1rem;
+}
+
+.sidebar_inner section {
+    margin-bottom: 1rem;
+}
+
+/* ------------------------------
+    テーマ切り替えボタン(例: 色ボタン)
+  ------------------------------ */
+.theme-selector {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.theme-btn {
+    width: 40px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    /* デフォルトの見た目は白、クラスで色を変える */
+}
+
+.theme-white {
+    background: #ffffff;
+}
+
+.theme-black {
+    background: #222222;
+}
+
+.theme-kinari {
+    background: #f9f6eb;
+}
+
+/* ------------------------------
+    メインレイアウト
+  ------------------------------ */
+.main {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    transition: margin-left 0.4s;
+}
+
+/* サイドバー重なりにしたので、.sidebar.open でもメイン自体のmargin-leftは変えない */
+.main_left {
+    flex: 1;
+    min-width: 200px;
+}
+
+.main_right {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ------------------------------
+    部屋カード
+  ------------------------------ */
+.room-card {
+    background: var(--bg-color);
+    /* 白ベースにするか、var(--bg-color)でもOK */
+    width: calc(50% - 0.5rem);
+    /* たとえば既存のshadowに加えて1px borderを追加 */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-3px);
+}
+
+.room-card img {
+    display: block;
+    /* 中央寄せにしたい場合 */
+    margin: 0 auto;
+    /* 中央寄せ */
+    max-width: 70%;
+    /* 親要素に対して何割くらいまで */
+    height: auto;
+    /* 縦横比を崩さない */
+}
+
+.room-card_text {
+    padding: 0.5rem;
+}
+.room-card_text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.room-card_text p {
+    font-size: 1rem;
+}
+
+/* ------------------------------
+    フッター
+  ------------------------------ */
+.footer {
+    background: var(--accent-color);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer_inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.social-btn {
+    background: #ddd;
+    color: #333;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: #bbb;
+}
+
+/* ------------------------------
+    レスポンシブ
+  ------------------------------ */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .main__right {
+        width: 100%;
+    }
+
+    .room-card {
+        width: 100%;
+    }
+}

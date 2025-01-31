@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>立ヶ瀬の作業室 - ホーム</title>
+    <!-- Google Fontsなどお好みで追加 -->
+    <link rel="stylesheet" href="../styles/style.css" />
+</head>
+
+<body class="theme-white"> <!-- 初期は白テーマに -->
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header_left">
+            <!-- ハンバーガーメニューアイコン（≡→×の切り替え） -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1 class="site-title">立ヶ瀬の作業室</h1>
+        </div>
+        <nav class="header_nav">
+            <a href="../html/home.html">ホーム</a>
+            <a href="../html/author.html">作者紹介</a>
+            <a href="#">お問い合わせ</a>
+            <a href="#">言語変更</a>
+        </nav>
+    </header>
+
+    <!-- サイドバー -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sideber_inner">
+            <!-- サイト内検索 -->
+            <section>
+                <h2>サイト内検索</h2>
+                <input type="text" id="searchInput" placeholder="キーワードを入力">
+                <button id="searchBtn">検索</button>
+            </section>
+
+            <!-- 更新情報 -->
+            <section>
+                <h2>更新情報</h2>
+                <ul>
+                    <!-- 例：最新記事など。手動またはJSで動的に入れる -->
+                    <li>2025/01/01 新年のご挨拶を追加</li>
+                    <li>2024/12/15 イラスト2点追加</li>
+                </ul>
+            </section>
+
+            <!-- 背景色を変更（3種類） -->
+            <section>
+                <h2>背景色を変更</h2>
+                <div class="theme-selector">
+                    <button class="theme-btn theme-white" data-theme="white">白</button>
+                    <button class="theme-btn theme-black" data-theme="black">黒</button>
+                    <button class="theme-btn theme-kinari" data-theme="kinari">生成り</button>
+                </div>
+            </section>
+        </div>
+    </aside>
+
+
+    <!--メインコンテンツ-->
+    <main class="main">
+        <!-- 左側にX(旧Twitter)埋め込みや作者の情報を載せるスペース -->
+        <section class="main_left">
+            <h2>作者のX（旧Twitter）</h2>
+            <!-- Twitterウィジェットを埋め込みたい場合は公式コード貼り付け -->
+            <div class="twitter-widget">
+                <!-- Twitter公式の埋め込み用スクリプトなどを入れるイメージ -->
+                <p>ここにTwitterの埋め込みタイムラインなど</p>
+            </div>
+        </section>
+
+        <!-- 右側に各部屋へのリンクカードを配置 -->
+        <section class="main_right">
+            <div class="room-card" onclick="location.href='novels.html'">
+                <img src="../image/books_1.png" alt="小説部屋イメージ">
+                <div class="room-card_text">
+                    <h3>小説部屋</h3>
+                    <p>小説一覧や執筆作品はこちら</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="location.href='illust.html'">
+                <img src="#" alt="イラスト部屋イメージ">
+                <div class="room-card_text">
+                    <h3>イラスト部屋</h3>
+                    <p>イラスト作品を掲載しています</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="location.href='photos.html'">
+                <img src="#" alt="写真部屋イメージ">
+                <div class="room-card_text">
+                    <h3>写真部屋</h3>
+                    <p>風景や鉄道写真などはこちら</p>
+                </div>
+            </div>
+
+            <!-- 必要に応じてどんどんカード追加 -->
+            <div class="room-card">
+                <img src="#" alt="ゲーム部屋イメージ" onclick="location.href='games.html'">
+                <div class="room-card_text">
+                    <h3>ゲーム部屋</h3>
+                    <p>ゲーム関連の記事・プレイ記録</p>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <img src="#" alt="観察部屋イメージ">
+                <div class="room-card_text">
+                    <h3>観察部屋</h3>
+                    <p>日々の観察記録や雑記など</p>
+                </div>
+            </div>
+
+            <div class="room-card">
+                <img src="#" alt="Discord部屋イメージ">
+                <div class="room-card_text">
+                    <h3>Discord部屋</h3>
+                    <p>共同作業や雑談コミュニティ</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer_inner">
+            <p>© 2025 立ヶ瀬の作業室</p>
+            <div class="social-links">
+                <a href="https://twitter.com/tategase" target="_blank" class="social-btn">X(旧Twitter)</a>
+                <a href="#" target="_blank" class="social-btn">YouTube</a>
+                <!-- 他のSNSアイコンも同様に追加 -->
+            </div>
+        </div>
+    </footer>
+    <script src="../scripts/main.js"></script>
+</body>
+
+</html>
