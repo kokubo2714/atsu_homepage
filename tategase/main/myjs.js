@@ -1,42 +1,51 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const toggleSwitch = document.getElementById('dark-mode-toggle');
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
+// scripts/main.js
 
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
-        }
-    }
-
-    function swichTheme(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }
-    }
+// ダークモード切り替え
+const darkModeSwitch = document.getElementById('darkModeSwitch');
+darkModeSwitch.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode', darkModeSwitch.checked);
 });
 
-//メディアクエリのダークモード検出
-window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-    const toggleSwitch = document.getElementById('dark-mode-toggle');
-    if (e.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        toggleSwitch.checked = true;
-        localStorage.setItem('theme', 'dark');
+// サイドバーの開閉(スマホ対応等で使う場合)
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+
+sidebarToggle.addEventListener('click', () => {
+    // 開閉の切り替え
+    if (sidebar.style.display === 'none') {
+    sidebar.style.display = 'block';
     } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        toggleSwitch.checked = false;
-        localStorage.setItem('theme', 'light');
+    sidebar.style.display = 'none';
     }
 });
 
-function imagechange1() {
-    document.getElementById('ui').src = "../image/roomart_2.jpg";
-}
-function imagechange2() {
-    document.getElementById('ui').src = "../image/roomart_1.jpg";
-}
+// 簡易的な検索機能例
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchBtn');
+
+// 仮の記事リスト (タイトルや本文を配列で保持しているイメージ)
+const articles = [
+    { title: '新年のご挨拶', content: '2025年の始まり...' },
+    { title: 'イラスト部屋に作品追加', content: '新しいイラストを2点...' },
+    { title: '写真部屋の更新', content: '風景写真を追加しました...' },
+];
+
+searchBtn.addEventListener('click', () => {
+    const keyword = searchInput.value.trim();
+    if (!keyword) {
+        alert('検索キーワードを入力してください');
+        return;
+    }
+
+  // フィルタ結果をコンソール表示 (実際は検索結果ページを表示するなど)
+    const results = articles.filter(article =>
+        article.title.includes(keyword) || article.content.includes(keyword)
+    );
+
+    console.log('検索結果:', results);
+    if (results.length === 0) {
+        alert('該当する記事がありませんでした。');
+    } else {
+        alert(`「${keyword}」に該当する記事が${results.length}件見つかりました。コンソールを確認！`);
+    }
+});
